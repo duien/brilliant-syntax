@@ -8,11 +8,12 @@
 @syntax-text-color: @purple-800;
 @syntax-cursor-color: @blue-grey-700;
 @syntax-selection-color: fadeout(@lime-A400, 50%);
-@syntax-background-color: lighten(@purple-50, 1%);
+@syntax-background-color: lighten(@purple-50, 5%);
+// @syntax-background-color: lighten(#fdffd8, 5%);
 
 // Guide colors
-@syntax-wrap-guide-color: @purple-100;
-@syntax-indent-guide-color: @purple-100;
+@syntax-wrap-guide-color: @purple-50;
+@syntax-indent-guide-color: @purple-50;
 @syntax-invisible-character-color: @deep-orange-400;
 
 // For find and replace markers
@@ -30,3 +31,16 @@
 @syntax-color-added: @green-A400;
 @syntax-color-modified: @orange-400;
 @syntax-color-removed: @red-400;
+
+// My own custom syntax variables
+// (Emacs-inspired)
+
+@syntax-color-builtin: @purple-400;
+@syntax-color-string: @teal-A700;
+@syntax-color-keyword: @indigo-400;
+@syntax-color-function: @light-blue-400;
+@syntax-color-comment: @deep-purple-100;
+@syntax-color-variable: @light-blue-400;
+@syntax-color-type: @teal-400;
+@syntax-color-constant: @orange-400;
+@syntax-color-warning: @deep-orange-A400;

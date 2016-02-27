@@ -48,10 +48,10 @@ atom-text-editor, :host {
   }
 
   // TODO Why is this just not working at all?
-  &.vim-mode-plus.normal-mode.is-focused .cursor {
-    color: @light-orange !important;
-    background-color: @light-orange !important;
-  }
+  // &.vim-mode-plus.normal-mode.is-focused .cursor {
+  //   color: @light-orange !important;
+  //   background-color: @light-orange !important;
+  // }
 
   .selection .region {
     background-color: @syntax-selection-color;
@@ -71,190 +71,213 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .comment {
-  color: #b0bec5;
+  color: @syntax-color-comment;
 }
 
 .keyword {
-  color: @purple;
+  color: @syntax-color-keyword;
 
   &.control {
-    color: @purple;
+    // color: @red;
   }
 
   &.operator {
-    color: @syntax-text-color;
+    color: @amber-400;
+    // color: @syntax-text-color;
   }
 
   &.other.special-method {
-    color: @blue;
+    // color: @blue;
   }
 
   &.other.unit {
-    color: @orange;
+    // color: @orange;
+    color: @pink-200;
+    thing: 5px;
   }
 }
 
 .storage {
-  color: @purple;
+  // color: @purple;
 }
 
 .constant {
-  color: @orange;
+  color: @syntax-color-constant;
 
   &.character.escape {
-    color: @cyan;
+    color: @deep-orange-400;
   }
 
   &.numeric {
-    color: @orange;
+    // color: @orange;
+    color: @pink-400;
   }
 
   &.other.color {
-    color: @cyan;
+    // color: @cyan;
   }
 
   &.other.symbol {
-    color: @green;
+    // color: @green;
   }
 }
 
 .variable {
-  color: @red;
+  color: @syntax-color-variable;
+  &.punctuation {
+    color: @blue-200;
+  }
 
   &.interpolation {
-    color: darken(@red, 10%);
+    // color: darken(@red, 10%);
   }
 
   &.parameter.function {
-    color: @syntax-text-color;
+    // color: @syntax-text-color;
   }
 }
 
 .invalid.illegal {
-  background-color: @red;
+  background-color: @syntax-color-warning;
   color: @syntax-background-color;
 }
 
 .string {
-  color: @green;
+  color: @syntax-color-string;
+  background: fade(@teal-50, 50%);
 
+  &.punctuation {
+    color: @teal-A400;
+    background: transparent;
+  }
 
   &.regexp {
-    color: @cyan;
+    // color: @cyan;
+    color: @cyan-A700;
+    background: fade(@cyan-50, 50%);
 
+    &.punctuation {
+      color: @cyan-A400;
+    }
     .source.ruby.embedded {
-      color: @orange;
+      // color: @orange;
     }
   }
 
   &.other.link {
-    color: @red;
+    // color: @red;
   }
 }
 
 .punctuation {
+  &.separator {
+    color: @syntax-text-color;
+    // color: @purple-200;
+  }
+  
   &.definition {
     &.comment {
-      color: #b0bec5;
+      color: @syntax-color-comment;
     }
 
-    &.string,
-    &.variable,
-    &.parameters,
-    &.array {
-      color: @syntax-text-color;
-    }
+    
+    // &.string,
+    // &.variable,
+    // &.parameters,
+    // &.array {
+      // color: @syntax-text-color;
+    // }
 
     &.heading,
     &.identity {
-      color: @blue;
+      // color: @blue;
     }
 
     &.bold {
-      color: @light-orange;
+      // color: @light-orange;
       font-weight: bold;
     }
 
     &.italic {
-      color: @purple;
+      // color: @purple;
       font-style: italic;
     }
   }
 
   &.section.embedded {
-    color: darken(@red, 10%);
+    // color: darken(@red, 10%);
   }
 
 }
 
 .support {
   &.class {
-    color: @light-orange;
+    // color: @light-orange;
   }
 
   &.function  {
-    color: @cyan;
+    // color: @cyan;
 
     &.any-method {
-      color: @blue;
+      // color: @blue;
     }
   }
 }
 
 .entity {
   &.name.function {
-    color: @blue;
+    // color: @blue;
   }
   &.name.type {
-    color: @light-orange;
-    text-decoration: underline;
+    // color: @light-orange;
+    // text-decoration: underline;
   }
 
   &.other.inherited-class {
-    color: @green;
+    // color: @green;
   }
   &.name.class, &.name.type.class {
-    color: @light-orange;
+    // color: @light-orange;
   }
 
   &.name.section {
-    color: @blue;
+    // color: @blue;
   }
 
   &.name.tag {
-    color: @red;
+    // color: @red;
     text-decoration: underline;
   }
 
   &.other.attribute-name {
-    color: @orange;
+    // color: @orange;
 
     &.id {
-      color: @blue;
+      // color: @blue;
     }
   }
 }
 
 .meta {
   &.class {
-    color: @light-orange;
+    // color: @light-orange;
   }
 
   &.link {
-    color: @orange;
+    // color: @orange;
   }
 
   &.require {
-    color: @blue;
+    // color: @blue;
   }
 
   &.selector {
-    color: @purple;
+    // color: @purple;
   }
 
   &.separator {
     // background-color: @gray;
-    color: @syntax-text-color;
+    // color: @syntax-text-color;
   }
 }
 
@@ -264,48 +287,48 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .markup {
   &.bold {
-    color: @orange;
+    // color: @orange;
     font-weight: bold;
   }
 
   &.changed {
-    color: @purple;
+    color: @syntax-color-renamed;
   }
 
   &.deleted {
-    color: @red;
+    color: @syntax-color-removed;
   }
 
   &.italic {
-    color: @purple;
+    // color: @purple;
     font-style: italic;
   }
 
   &.heading .punctuation.definition.heading {
-    color: @blue;
+    // color: @blue;
   }
 
   &.inserted {
-    color: @green;
+    color: @syntax-color-added;
   }
 
   &.list {
-    color: @red;
+    // color: @red;
   }
 
   &.quote {
-    color: @orange;
+    // color: @orange;
   }
 
   &.raw.inline {
-    color: @green;
+    // color: @green;
   }
 }
 
 .source.gfm .markup {
   -webkit-font-smoothing: auto;
   &.heading {
-    color: @green;
+    // color: @green;
   }
 }
 
