@@ -115,13 +115,11 @@
   }
 
   &.regexp {
-    color: @indigo-400;
-    // background: fade(@cyan-50, 50%);
+    color: @syntax-color-regexp;
     background: @indigo-50;
 
     > .punctuation {
-      color: @indigo-400;
-      // color: @cyan-A400;
+      color: @syntax-color-regexp;
     }
     .source.ruby.embedded {
       // color: @orange;
@@ -217,6 +215,12 @@
     font-weight: 600;
   }
 
+  &.parent-selector {
+    // The "&" in LESS stylesheets
+    color: @syntax-color-variable;
+    font-weight: 600;
+  }
+
   &.other.inherited-class {
     // color: @green;
     color: @syntax-color-constant;
@@ -291,29 +295,35 @@
 
 .markup {
   &.bold {
-    // color: @orange;
-    font-weight: bold;
+    color: @syntax-color-builtin;
+    font-weight: 600;
   }
-
-  &.changed {
-    color: @syntax-color-renamed;
-  }
-
-  &.deleted {
-    color: @syntax-color-removed;
-  }
-
+  
   &.italic {
-    // color: @purple;
+    color: @syntax-color-builtin;
     font-style: italic;
   }
 
-  &.heading .punctuation.definition.heading {
-    // color: @blue;
-  }
+  &.heading {
+    color: @syntax-color-type;
+    font-weight: 600;
+    font-style: italic;
+    
+    &.heading-1 {
+      border-bottom: 1px solid;
+    }
+    
+    &.heading-2 {
+      color: @syntax-color-constant;
+    }
 
-  &.inserted {
-    color: @syntax-color-added;
+    .punctuation.definition.heading, .marker.heading, .space.heading {
+      color: @syntax-color-comment;
+      font-weight: 300;
+      // text-decoration: underline;
+      // -webkit-text-decoration-color: @syntax-background-color;
+      border-bottom: 1px solid @syntax-background-color;
+    }
   }
 
   &.list {
@@ -324,8 +334,34 @@
     // color: @orange;
   }
 
-  &.raw.inline {
+  &.raw {
     // color: @green;
+    color: @syntax-color-regexp;
+    background: @indigo-50;
+  }
+
+  &.code .support {
+    color: @indigo-200;
+    font-style: italic;
+  }
+  
+  &.link.underline{
+    color: @syntax-color-numeric;
+    .punctuation {
+      color: @syntax-color-punctuation;
+    }
+  }
+
+  &.changed {
+    color: @syntax-color-renamed;
+  }
+
+  &.deleted {
+    color: @syntax-color-removed;
+  }
+
+  &.inserted {
+    color: @syntax-color-added;
   }
 }
 
