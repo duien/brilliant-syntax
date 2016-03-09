@@ -344,13 +344,6 @@
     color: @indigo-200;
     font-style: italic;
   }
-  
-  &.link.underline{
-    color: @syntax-color-numeric;
-    .punctuation {
-      color: @syntax-color-punctuation;
-    }
-  }
 
   &.changed {
     color: @syntax-color-renamed;
@@ -369,5 +362,14 @@
   -webkit-font-smoothing: auto;
   &.heading {
     // color: @green;
+  }
+
+  // Atom is fairly agressive in detecting links (finding them in strings in
+  // arbitrary language grammars) so scope this to only markdown
+  &.link.underline{
+    color: @syntax-color-numeric;
+    .punctuation {
+      color: @syntax-color-punctuation;
+    }
   }
 }
