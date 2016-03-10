@@ -1,0 +1,18 @@
+.source.yaml {
+  > .string {
+    background: transparent;
+    color: @syntax-text-color;
+  }
+
+  .punctuation {
+    &.entry {
+      color: @syntax-color-punctuation;
+    }
+  }
+
+  .entity.name.tag {
+     font-weight: normal;
+     font-style: normal;
+     color: @syntax-color-constant;
+  }
+}
