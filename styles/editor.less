@@ -16,7 +16,8 @@ atom-text-editor, :host {
   }
 
   .cursor-line {
-    background: mix(@purple-50, @syntax-background-color);
+    // background: mix(@purple-50, @syntax-background-color);
+    background: @syntax-gutter-background-color-selected;
   }
 
   .gutter {
@@ -58,6 +59,17 @@ atom-text-editor, :host {
 
   .selection .region {
     background-color: @syntax-selection-color;
+  }
+}
+
+// Use gutter color for non-editable area of Zen mode
+[data-zen="true"] atom-pane-container atom-pane .item-views {
+  background: @syntax-gutter-background-color !important;
+
+  atom-text-editor, :host {
+    .gutter-container {
+      margin-right: 0 !important;
+    }
   }
 }
 

@@ -1,8 +1,10 @@
 .comment {
   color: @syntax-color-comment;
-  
+  font-style: italic;
+
   &.documentation {
     color: @teal-200;
+    background: none;
   }
 
   .storage {
@@ -32,7 +34,7 @@
   }
 
   &.other.special-method {
-    // color: @blue;
+    color: @syntax-color-builtin;
   }
 
   &.other.unit {
@@ -107,11 +109,13 @@
 
 .string {
   color: @syntax-color-string;
+  font-style: italic;
   // background: fade(@teal-50, 50%);
   background: @teal-50;
 
   &.punctuation {
     background: transparent;
+    font-style: normal;
   }
 
   &.regexp {
@@ -129,6 +133,7 @@
   
   .embedded .source {
     color: @syntax-text-color;
+    font-style: normal;
   }
 
   &.other.link {
@@ -200,6 +205,19 @@
       // color: @blue;
     }
   }
+
+  // There's *very* weird classes for charlists in elixir
+  // so this is for that
+  &.quoted {
+    color: @orange-A700;
+    font-style: italic;
+    background: mix(@orange-50, @orange-100);
+
+    .string.punctuation {
+      color: @orange-A700;
+      font-style: normal;
+    }
+  }
 }
 
 .entity {
@@ -259,6 +277,9 @@
 
   &.other.attribute-name {
     // color: @orange;
+    &.haml {
+      color: @cyan-400;
+    }
 
     &.id {
       // color: @blue;
@@ -287,6 +308,12 @@
     // background-color: @gray;
     // color: @syntax-text-color;
   }
+  
+  &.attributes.haml .string.unquoted {
+    color: @syntax-text-color;
+    background: none;
+    font-style: normal;
+  }
 }
 
 .none {
@@ -300,7 +327,7 @@
   }
   
   &.italic {
-    color: @syntax-color-builtin;
+    color: @syntax-color-variable;
     font-style: italic;
   }
 
@@ -358,18 +385,34 @@
   }
 }
 
-.source.gfm .markup {
-  -webkit-font-smoothing: auto;
-  &.heading {
-    // color: @green;
+.source.gfm, .text.md {
+  .punctuation.md {
+    color: @syntax-color-comment;
+    font-style: normal;
+    font-weight: normal;
   }
+
+  .list > .punctuation {
+    color: @syntax-color-variable;
+  }
+
+  .quote.md {
+    font-style: italic;
+    color: @syntax-color-function;
+  }
+  
+  .fenced .language {
+    color: @syntax-color-comment;
+    font-style: italic;
+  }
+  // .code .embedded .punctuation {
+  //   color: @syntax-color-punctuation;
+  // }
 
   // Atom is fairly agressive in detecting links (finding them in strings in
   // arbitrary language grammars) so scope this to only markdown
-  &.link.underline{
+  .link.underline{
     color: @syntax-color-numeric;
-    .punctuation {
-      color: @syntax-color-punctuation;
-    }
+    text-decoration: underline;
   }
 }
