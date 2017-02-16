@@ -95,7 +95,7 @@
   &.parameter.function {
     // color: @syntax-text-color;
   }
-  
+
   &.constant {
     color: @syntax-color-constant;
   }
@@ -110,8 +110,8 @@
 .string {
   color: @syntax-color-string;
   font-style: italic;
-  // background: fade(@teal-50, 50%);
-  background: @teal-50;
+  background: fade(@teal-50, 50%);
+  // background: @teal-50;
 
   &.punctuation {
     background: transparent;
@@ -120,7 +120,7 @@
 
   &.regexp {
     color: @syntax-color-regexp;
-    background: @indigo-50;
+    background: fade(@indigo-50, 50%);
 
     > .punctuation {
       color: @syntax-color-regexp;
@@ -130,7 +130,7 @@
       // color: @purple-400;
     }
   }
-  
+
   .embedded .source {
     color: @syntax-text-color;
     font-style: normal;
@@ -147,7 +147,7 @@
     // color: @purple-200;
     color: @syntax-color-punctuation;
   }
-  
+
   &.definition {
     &.comment {
       // color: @syntax-color-comment;
@@ -308,7 +308,7 @@
     // background-color: @gray;
     // color: @syntax-text-color;
   }
-  
+
   &.attributes.haml .string.unquoted {
     color: @syntax-text-color;
     background: none;
@@ -325,7 +325,7 @@
     color: @syntax-color-builtin;
     font-weight: 600;
   }
-  
+
   &.italic {
     color: @syntax-color-variable;
     font-style: italic;
@@ -335,11 +335,11 @@
     color: @syntax-color-constant;
     font-weight: 600;
     font-style: italic;
-    
+
     // &.heading-1 {
     //   border-bottom: 1px solid;
     // }
-    // 
+    //
     // &.heading-2 {
     //   color: @syntax-color-constant;
     // }
@@ -400,10 +400,16 @@
     font-style: italic;
     color: @syntax-color-function;
   }
-  
-  .fenced .language {
-    color: @syntax-color-comment;
-    font-style: italic;
+
+  .fenced {
+    color: @syntax-color-regexp;
+    .embedded.source {
+      color: @syntax-text-color;
+    }
+    .language {
+      color: @syntax-color-comment;
+      font-style: italic;
+    }
   }
   // .code .embedded .punctuation {
   //   color: @syntax-color-punctuation;

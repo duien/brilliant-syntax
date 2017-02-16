@@ -64,9 +64,13 @@ atom-text-editor, :host {
 
 // Use gutter color for non-editable area of Zen mode
 [data-zen="true"] atom-pane-container atom-pane .item-views {
-  background: @syntax-gutter-background-color !important;
+  // background: @syntax-gutter-background-color !important;
+  background: @syntax-gutter-background-color-selected !important;
 
   atom-text-editor, :host {
+    // border-left: 1em solid @syntax-background-color;
+    // border-right: 1em solid @syntax-background-color;
+
     .gutter-container {
       margin-right: 0 !important;
     }
