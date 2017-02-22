@@ -4,4 +4,8 @@ A bright, colorful syntax theme that coordinates well with the Material color pa
 
     apm install brilliant-syntax
 
-Screenshots etc. coming eventually.
+![ruby syntax example screenshot](screenshots/ruby-full.png)
+
+Pictured above with [atom-material-ui](https://atom.io/themes/atom-material-ui) theme and [Input](http://input.fontbureau.com/preview/?size=14&language=python&theme=monokai&family=InputMono&width=300&weight=300&line-height=1.2&a=0&g=0&i=serifs_round&l=serifs_round&zero=0&asterisk=height&braces=straight&preset=default&customize=please) font.
+
+The next update will include fixes for deprecated selectors.
