@@ -1,5 +1,7 @@
-# brilliant-syntax theme
+# :sparkles: Brilliant :sparkles:
 
-A short description of your theme.
+A bright, colorful syntax theme that coordinates well with the Material color palette. Primarily purple, with plenty of pink, orange, and green. The successor to my previous syntax theme, [Princess](https://github.com/duien/princess-syntax)
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+    apm install brilliant-syntax
+
+Screenshots etc. coming eventually.

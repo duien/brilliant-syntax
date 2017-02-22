@@ -5,9 +5,11 @@
   "description": "A short description of your syntax theme",
   "keywords": [
     "syntax",
-    "theme"
+    "theme",
+    "light",
+    "bright"
   ],
-  "repository": "https://github.com/atom/brilliant-syntax",
+  "repository": "https://github.com/duien/brilliant-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
