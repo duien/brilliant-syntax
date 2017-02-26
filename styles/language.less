@@ -1,13 +1,13 @@
-.comment {
+.syntax--comment {
   color: @syntax-color-comment;
   font-style: italic;
 
-  &.documentation {
+  &.syntax--documentation {
     color: @teal-200;
     background: none;
   }
 
-  .storage {
+  .syntax--storage {
     color: @syntax-background-color;
     background: @purple-A400;
     font-weight: 600;
@@ -15,145 +15,146 @@
     margin:  0 -2px 0 -3px;
     padding: 0  2px 0  3px;
 
-    &.todo  { background: @teal-A400; }
-    &.fixme { background: @deep-orange-A400; }
-    &.note  { background: @amber-A400; }
+    &.syntax--todo  { background: @teal-A400; }
+    &.syntax--fixme { background: @deep-orange-A400; }
+    &.syntax--note  { background: @amber-A400; }
+    &.syntax--xxx   { background: @light-blue-A400; }
   }
 }
 
-.keyword {
+.syntax--keyword {
   color: @syntax-color-keyword;
 
-  &.control {
+  &.syntax--control {
     // color: @red;
     font-weight: 600;
   }
 
-  &.operator {
+  &.syntax--operator {
     color: @syntax-color-punctuation;
   }
 
-  &.other.special-method {
+  &.syntax--other.syntax--special-method {
     color: @syntax-color-builtin;
   }
 
-  &.other.unit {
+  &.syntax--other.syntax--unit {
     // based on '@syntax-color-constant' for number
     color: @light-blue-200;
     font-weight: 400;
   }
 }
 
-.storage {
+.syntax--storage {
   // color: @purple;
   color: @syntax-color-builtin;
 }
 
-.constant {
+.syntax--constant {
   color: @syntax-color-constant;
 
-  &.character.escape {
+  &.syntax--character.syntax--escape {
     // color: @syntax-color-warning;
     color: @pink-400;
     font-weight: 600;
   }
 
-  &.numeric {
+  &.syntax--numeric {
     color: @syntax-color-numeric;
     font-weight: 600;
   }
 
-  &.other.color {
+  &.syntax--other.syntax--color {
     // color: @cyan;
   }
 
-  &.other.symbol {
+  &.syntax--other.syntax--symbol {
     // color: @green;
     color: @cyan-400;
-    > .punctuation {
+    > .syntax--punctuation {
       color: @cyan-400;
     }
   }
 }
 
-.variable {
+.syntax--variable {
   color: @syntax-color-variable;
-  &.punctuation.separator {
+  &.syntax--punctuation.syntax--separator {
     color: @syntax-color-punctuation;
   }
-  &.readwrite.js, &.other.object, &.property {
+  &.syntax--readwrite.syntax--js, &.syntax--other.syntax--object, &.syntax--property {
     color: @syntax-text-color;
   }
-  &.language.this, &.anonymous {
+  &.syntax--language.syntax--this, &.syntax--anonymous {
     font-weight: 600;
   }
 
-  &.interpolation {
+  &.syntax--interpolation {
     // color: darken(@red, 10%);
   }
 
-  &.parameter.function {
+  &.syntax--parameter.syntax--function {
     // color: @syntax-text-color;
   }
 
-  &.constant {
+  &.syntax--constant {
     color: @syntax-color-constant;
   }
 }
 
-.invalid.illegal {
+.syntax--invalid.syntax--illegal {
   background-color: @syntax-color-warning;
   color: @syntax-background-color;
   font-weight: 500;
 }
 
-.string {
+.syntax--string {
   color: @syntax-color-string;
   font-style: italic;
   background: fade(@teal-50, 50%);
   // background: @teal-50;
 
-  &.punctuation {
+  &.syntax--punctuation {
     background: transparent;
     font-style: normal;
   }
 
-  &.regexp {
+  &.syntax--regexp {
     color: @syntax-color-regexp;
     background: fade(@indigo-50, 50%);
 
-    > .punctuation {
+    > .syntax--punctuation {
       color: @syntax-color-regexp;
     }
-    .source.ruby.embedded {
+    .syntax--source.syntax--ruby.syntax--embedded {
       // color: @orange;
       // color: @purple-400;
     }
   }
 
-  .embedded .source {
+  .syntax--embedded .syntax--source {
     color: @syntax-text-color;
     font-style: normal;
   }
 
-  &.other.link {
+  &.syntax--other.syntax--link {
     // color: @red;
   }
 }
 
-.punctuation {
-  &.separator {
+.syntax--punctuation {
+  &.syntax--separator {
     // color: @syntax-text-color;
     // color: @purple-200;
     color: @syntax-color-punctuation;
   }
 
-  &.definition {
-    &.comment {
+  &.syntax--definition {
+    &.syntax--comment {
       // color: @syntax-color-comment;
     }
 
-    &.tag {
+    &.syntax--tag {
       color: @purple-A200;
     }
 
@@ -164,24 +165,24 @@
       // color: @syntax-text-color;
     // }
 
-    &.heading,
-    &.identity {
+    &.syntax--heading,
+    &.syntax--identity {
       // color: @blue;
     }
 
-    &.bold {
+    &.syntax--bold {
       // color: @light-orange;
       font-weight: bold;
     }
 
-    &.italic {
+    &.syntax--italic {
       // color: @purple;
       font-style: italic;
     }
   }
 
   // String interpolation
-  &.section.embedded {
+  &.syntax--section.syntax--embedded {
     color: @syntax-color-punctuation;
     font-weight: 600;
 
@@ -190,148 +191,148 @@
 
 }
 
-.support {
-  &.class {
+.syntax--support {
+  &.syntax--class {
     // color: @light-orange;
     // color: @syntax-color-constant;
     color: @deep-orange-400;
   }
 
-  &.function  {
+  &.syntax--function  {
     // color: @cyan;
     color: @syntax-color-builtin;
 
-    &.any-method {
+    &.syntax--any-method {
       // color: @blue;
     }
   }
 
   // There's *very* weird classes for charlists in elixir
   // so this is for that
-  &.quoted {
+  &.syntax--quoted {
     color: @orange-A700;
     font-style: italic;
     background: mix(@orange-50, @orange-100);
 
-    .string.punctuation {
+    .syntax--string.syntax--punctuation {
       color: @orange-A700;
       font-style: normal;
     }
   }
 }
 
-.entity {
-  &.name.function {
+.syntax--entity {
+  &.syntax--name.syntax--function {
     // color: @blue;
     color: @syntax-color-function;
     font-weight: 600;
   }
-  &.name.type {
+  &.syntax--name.syntax--type {
     // color: @light-orange;
     // text-decoration: underline;
     color: @syntax-color-type;
     font-weight: 600;
   }
 
-  &.parent-selector {
+  &.syntax--parent-selector {
     // The "&" in LESS stylesheets
     color: @syntax-color-variable;
     font-weight: 600;
   }
 
-  &.other.inherited-class {
+  &.syntax--other.syntax--inherited-class {
     // color: @green;
     color: @syntax-color-constant;
     font-weight: 400;
   }
-  &.name.class, &.name.type.class {
+  &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
     // color: @light-orange;
   }
 
-  &.name.section {
+  &.syntax--name.syntax--section {
     // color: @blue;
   }
 
-  &.name.tag {
+  &.syntax--name.syntax--tag {
     // color: @red;
     // text-decoration: underline;
     color: @purple-A200;
 
-    &.class {
+    &.syntax--class {
       color: @syntax-color-constant;
     }
 
-    &.id {
+    &.syntax--id {
       color: @syntax-color-numeric;
     }
   }
 
   // TODO This duplication makes me sad
-  &.class {
+  &.syntax--class {
     color: @syntax-color-constant;
   }
 
-  &.id {
+  &.syntax--id {
     color: @syntax-color-numeric;
   }
 
-  &.other.attribute-name {
+  &.syntax--other.syntax--attribute-name {
     // color: @orange;
-    &.haml {
+    &.syntax--haml {
       color: @cyan-400;
     }
 
-    &.id {
+    &.syntax--id {
       // color: @blue;
     }
   }
 }
 
-.meta {
-  &.class {
+.syntax--meta {
+  &.syntax--class {
     // color: @light-orange;
   }
 
-  &.link {
+  &.syntax--link {
     // color: @orange;
   }
 
-  &.require {
+  &.syntax--require {
     // color: @blue;
   }
 
-  &.selector {
+  &.syntax--selector {
     // color: @purple;
   }
 
-  &.separator {
+  &.syntax--separator {
     // background-color: @gray;
     // color: @syntax-text-color;
   }
 
-  &.attributes.haml .string.unquoted {
+  &.syntax--attributes.syntax--haml .syntax--string.syntax--unquoted {
     color: @syntax-text-color;
     background: none;
     font-style: normal;
   }
 }
 
-.none {
+.syntax--none {
   color: @syntax-text-color;
 }
 
-.markup {
-  &.bold {
+.syntax--markup {
+  &.syntax--bold {
     color: @syntax-color-builtin;
     font-weight: 600;
   }
 
-  &.italic {
+  &.syntax--italic {
     color: @syntax-color-variable;
     font-style: italic;
   }
 
-  &.heading {
+  &.syntax--heading {
     color: @syntax-color-constant;
     font-weight: 600;
     font-style: italic;
@@ -344,7 +345,8 @@
     //   color: @syntax-color-constant;
     // }
 
-    .punctuation.definition.heading, .marker.heading, .space.heading {
+    .syntax--punctuation.syntax--definition.syntax--heading,
+    .syntax--marker.syntax--heading, .syntax--space.syntax--heading {
       color: @syntax-color-comment;
       font-weight: 300;
       // text-decoration: underline;
@@ -353,60 +355,60 @@
     }
   }
 
-  &.list {
+  &.syntax--list {
     // color: @red;
   }
 
-  &.quote {
+  &.syntax--quote {
     // color: @orange;
   }
 
-  &.raw {
+  &.syntax--raw {
     // color: @green;
     color: @syntax-color-regexp;
     background: @indigo-50;
   }
 
-  &.code .support {
+  &.syntax--code .syntax--support {
     color: @indigo-200;
     font-style: italic;
   }
 
-  &.changed {
+  &.syntax--changed {
     color: @syntax-color-renamed;
   }
 
-  &.deleted {
+  &.syntax--deleted {
     color: @syntax-color-removed;
   }
 
-  &.inserted {
+  &.syntax--inserted {
     color: @syntax-color-added;
   }
 }
 
-.source.gfm, .text.md {
-  .punctuation.md {
+.syntax--source.syntax--gfm, .syntax--text.syntax--md {
+  .syntax--punctuation.syntax--md {
     color: @syntax-color-comment;
     font-style: normal;
     font-weight: normal;
   }
 
-  .list > .punctuation {
+  .syntax--list > .syntax--punctuation {
     color: @syntax-color-variable;
   }
 
-  .quote.md {
+  .syntax--quote.syntax--md {
     font-style: italic;
     color: @syntax-color-function;
   }
 
-  .fenced {
+  .syntax--fenced {
     color: @syntax-color-regexp;
-    .embedded.source {
+    .syntax--embedded.syntax--source {
       color: @syntax-text-color;
     }
-    .language {
+    .syntax--language {
       color: @syntax-color-comment;
       font-style: italic;
     }
@@ -417,7 +419,7 @@
 
   // Atom is fairly agressive in detecting links (finding them in strings in
   // arbitrary language grammars) so scope this to only markdown
-  .link.underline{
+  .syntax--link.syntax--underline{
     color: @syntax-color-numeric;
     text-decoration: underline;
   }
